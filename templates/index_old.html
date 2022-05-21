@@ -1,0 +1,21 @@
+<h1>{{object_list}}</h1>
+
+<br>
+
+{% for element in object_list %}
+<h2>{{element.id}}</h2>
+<h2>{{element.order_date}}</h2>
+<h2>{{element.order_name}}</h2>
+<h2>{{element.order_phone}}</h2>
+{% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+
+<form action="{% url 'thanks_page' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+</form>
